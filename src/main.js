@@ -15,4 +15,8 @@ window.electron = electron
 app.component('GcSpreadSheets', GcSpreadSheets)
 app.component('GcWorksheet', GcWorksheet)
 
+app.config.errorHandler = (err) => {
+  if (err) console.log('哎呦喂，出错了：', err)
+}
+
 app.mount('#app')
