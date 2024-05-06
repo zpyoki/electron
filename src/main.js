@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // import 'ant-design-vue/dist/reset.css'
 import './style.css'
+import router from '@/router'
 import { GcSpreadSheets, GcWorksheet } from '@grapecity-software/spread-sheets-vue'
 
 let app = createApp(App)
@@ -18,5 +19,7 @@ app.component('GcWorksheet', GcWorksheet)
 app.config.errorHandler = (err) => {
   if (err) console.log('哎呦喂，出错了：', err)
 }
+
+app.use(router)
 
 app.mount('#app')
