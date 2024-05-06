@@ -38,7 +38,7 @@
     "wait-on": "^7.2.0"
   },
   "build": {
-    "productName": "快速报价",
+    "productName": "冒险与召唤",
     "appId": "com.pixiu.qq",
     "copyright": "Copyright © 2024 PIXIU",
     "files": [
@@ -65,19 +65,6 @@
       "hardenedRuntime": true,
       "gatekeeperAssess": false
     },
-    "dmg": {
-      "contents": [
-        {
-          "x": 410,
-          "y": 150
-        },
-        {
-          "x": 130,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    }
+    "dmg": {}
   }
 }

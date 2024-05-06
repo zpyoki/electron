@@ -1,5 +1,5 @@
 import path from 'path'
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, nativeImage } from 'electron'
 import { fileURLToPath } from 'url'
 import config from '../utils/config.js'
 import electronUtils from './electrons/index.js'
@@ -29,7 +29,9 @@ const createWindow = () => {
     title: config.projectName,
     width: 950,
     height: 700,
-    icon: getAssetPath(config.icon),
+    // icon: getAssetPath(config.icon),
+    // icon: nativeImage.createFromPath(getAssetPath('icons/icon.icns')),
+    // icon: nativeImage.createFromPath(path.join(__dirname, '../assets/icons/icon.icns')),
     show: false,
     webPreferences: {
       nodeIntegration: true,
@@ -38,14 +40,25 @@ const createWindow = () => {
     }
   })
 
+  // 设置图标
+  if (process.platform === 'darwin') {
+    app.dock.setIcon(getAssetPath(config.icon))
+  } else {
+    mainWindow.setIcon(getAssetPath(config.icon))
+  }
+
+  // 加载页面
   if (isDevelopment) {
+    // const filePath = path.join(__dirname, '../../dist/index.html')
+    // mainWindow.loadFile(filePath)
     mainWindow.loadURL("http://localhost:8888")
     mainWindow.webContents.openDevTools()
   } else {
-    const filePath = path.join(__dirname, '../../dist/index.html')
+    mainWindow.loadURL("http://localhost:8888")
+    // const filePath = path.join(__dirname, '../../dist/index.html')
     mainWindow.loadFile(filePath)
   }
-
+  
   mainWindow.on('ready-to-show', () => {
     console.log('---readyToShow---')
     if (!mainWindow) {
