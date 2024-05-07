@@ -11,7 +11,6 @@ GC.Spread.Common.CultureManager.culture("zh-cn")
 </script>
 
 <template>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
   <RouterView />
 </template>
 

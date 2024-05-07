@@ -43,11 +43,6 @@ const createWindow = () => {
     }
   })
 
-  // 设置图标
-  if (process.platform === 'darwin') {
-    app.dock.setIcon(getAssetPath(config.icon))
-  }
-
   // 加载页面
   if (isProduction) {
     const filePath = path.join(__dirname, '../../dist/index.html')

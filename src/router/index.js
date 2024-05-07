@@ -1,13 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+
+const Layout = () => import('@/components/layout/index.vue')
 
 const routes = [
   { path: '/:any(.*)*', name: 'NotFound', component: () => import('@/views/NotFound.vue') },
-  { path: '/', component: () => import('@/components/HelloWorld.vue') },
-  // { path: '/about', component: About },
+  // { path: '/', component: () => import('@/components/HelloWorld.vue') },
+  {
+    path: '/',
+    redirect: '/home',
+    component: Layout,
+    children: [
+      { path: 'home', component: () => import('@/views/home/index.vue') },
+    ]
+  }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: window.require ? createWebHashHistory() : createWebHistory(),
   routes
 })
 

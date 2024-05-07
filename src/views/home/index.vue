@@ -40,8 +40,7 @@ const toogleConsole = () => {
 </script>
 
 <template>
-  <div class="componentContainer" >
-    <h3>快速入门指南</h3>
+  <div >
     <!-- <div>Mouse position is at: {{ x }}, {{ y }}</div> -->
     <a-button @click="openFile">打开文件</a-button>
     <a-button @click="saveFile">保存文件</a-button>
