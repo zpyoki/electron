@@ -1,14 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
-  // { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('@/views/NotFound.vue') },
-  { path: '/:any(.*)*', component: () => import('@/components/HelloWorld.vue') },
+  { path: '/:any(.*)*', name: 'NotFound', component: () => import('@/views/NotFound.vue') },
+  { path: '/', component: () => import('@/components/HelloWorld.vue') },
   // { path: '/about', component: About },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes, // `routes: routes` 的缩写
+  routes
 })
+
+// router.beforeEach(async (to, from) => {
+//   if (
+//     // 检查用户是否已登录
+//     !isAuthenticated &&
+//     // ❗️ 避免无限重定向
+//     to.name !== 'Login'
+//   ) {
+//     // 将用户重定向到登录页面
+//     return { name: 'Login' }
+//   }
+
+//   // ...
+//   // 返回 false 以取消导航
+//   return false
+// })
 
 export default router

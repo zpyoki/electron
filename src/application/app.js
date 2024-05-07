@@ -7,8 +7,10 @@ import electronUtils from './electrons/index.js'
 // 设置环境变量
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const isDevelopment = process.env.NODE_ENV !== 'production'
-console.log('测试环境：', isDevelopment)
+// const isDevelopment = process.env.NODE_ENV !== 'production'
+// console.log('测试环境：', isDevelopment, process.env.NODE_ENV)
+const isProduction = process.env.NODE_ENV !== 'development'
+console.log('生产环境：', isProduction, process.env.NODE_ENV)
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = true
 
@@ -29,7 +31,8 @@ const createWindow = () => {
     title: config.projectName,
     width: 950,
     height: 700,
-    // icon: getAssetPath(config.icon),
+    icon: getAssetPath(config.ico),
+    // icon: nativeImage.createFromPath(getAssetPath(config.ico)),
     // icon: nativeImage.createFromPath(getAssetPath('icons/icon.icns')),
     // icon: nativeImage.createFromPath(path.join(__dirname, '../assets/icons/icon.icns')),
     show: false,
@@ -43,20 +46,15 @@ const createWindow = () => {
   // 设置图标
   if (process.platform === 'darwin') {
     app.dock.setIcon(getAssetPath(config.icon))
-  } else {
-    mainWindow.setIcon(getAssetPath(config.icon))
   }
 
   // 加载页面
-  if (isDevelopment) {
-    // const filePath = path.join(__dirname, '../../dist/index.html')
-    // mainWindow.loadFile(filePath)
-    mainWindow.loadURL("http://localhost:8888")
-    mainWindow.webContents.openDevTools()
+  if (isProduction) {
+    const filePath = path.join(__dirname, '../../dist/index.html')
+    mainWindow.loadFile(filePath)
   } else {
     mainWindow.loadURL("http://localhost:8888")
-    // const filePath = path.join(__dirname, '../../dist/index.html')
-    mainWindow.loadFile(filePath)
+    mainWindow.webContents.openDevTools()
   }
   
   mainWindow.on('ready-to-show', () => {

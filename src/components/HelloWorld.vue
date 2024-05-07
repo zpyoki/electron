@@ -2,6 +2,8 @@
 import { reactive, ref } from 'vue'
 import { useMouse } from '@/hooks/event/useMouse'
 
+console.log(process.env)
+
 const { x, y } = useMouse()
 
 const dataTable = reactive([
