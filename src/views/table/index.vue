@@ -58,7 +58,7 @@ const toogleConsole = () => {
 .spreadContainer {
   padding: 10px;
   box-shadow: 0 0 20px grey;
-  height: 800px;
+  height: 500px;
 }
 .spreadHost{
   width: 100%;

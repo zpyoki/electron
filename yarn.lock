@@ -240,25 +240,144 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.20.2.tgz#9c907b21e30a52db959ba4f80bb01a0cc403d5cc"
   integrity sha512-N49X4lJX27+l9jbLKSqZ6bKNjzQvHaT8IIFUy+YIqmXQdjYCToGWwOItDrfby14c78aDd5NHQl29xingXfCdLQ==
 
-"@grapecity-software/spread-sheets-resources-zh@^17.0.2":
-  version "17.0.6"
-  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-resources-zh/-/spread-sheets-resources-zh-17.0.6.tgz#b1b5d4bdfe32ec4d6636f6e1c0f7574b5bc6fe5e"
-  integrity sha512-CijgKukEMcBeW/oKOuqEIWyt7o0dnAJaMX1sS8RzcaYWMsbVAgWZqDynxA46rBlzUAlzscbcz5GJb2XjISqGVg==
+"@grapecity-software/spread-excelio@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-excelio/-/spread-excelio-17.0.2.tgz#955bdfe1d4b110cdd18e7cc6b44d913343debae1"
+  integrity sha512-F3fyodA1Il9EMC73et18HdBlC+P+riYPhVhXODuUq/e6RtgqBse0qfCxTqigEok0JwqJeLMymPhiJMX4fLrglQ==
   dependencies:
-    "@grapecity-software/spread-sheets" "17.0.6"
+    "@grapecity-software/spread-sheets" "17.0.2"
 
-"@grapecity-software/spread-sheets-vue@^17.0.2":
-  version "17.0.6"
-  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-vue/-/spread-sheets-vue-17.0.6.tgz#c73979a0154296cd24f6f1d608be103fe6b75aeb"
-  integrity sha512-J2+EFoAwNk1RovPVJuQJ2qT/B4AFnFHDgBQA08a5kf4Vn0QltWQ0he59wOqSk9y2xqxVOwAfxk1PhkWV9YbBRw==
+"@grapecity-software/spread-sheets-barcode@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-barcode/-/spread-sheets-barcode-17.0.2.tgz#c6decc776440778a06b3b796af4aaf5d99606e4f"
+  integrity sha512-Xkgqi7E2z9Foo3m0YmeMXpIS93mhAN/506ULvaiG220S5Emogctb8SV7bJ353RFddgFT2k+E8clthRDwo8gNPw==
   dependencies:
-    "@grapecity-software/spread-sheets" "17.0.6"
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-charts@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-charts/-/spread-sheets-charts-17.0.2.tgz#dae6141035274ff06f783cb82162a3a6e4e4aee1"
+  integrity sha512-l2xZIBFetzVHxxUK1o8UhQLG3zvR1ZauvILj43o7xzjXzsP4S4+6e5B0xuh85QzUFATfXUZ1ORug7wuqyoC4Cg==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+    "@grapecity-software/spread-sheets-shapes" "17.0.2"
+
+"@grapecity-software/spread-sheets-designer-resources-cn@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-designer-resources-cn/-/spread-sheets-designer-resources-cn-17.0.2.tgz#202cb654c53d3bb160564d15ec12b87aad30d6e4"
+  integrity sha512-mJDa404D0EQNBry0kT86vowwLWn2kM0f7qkXp1mBCgzmgbyjJHTSC3+pZLfyVV/BTe1345IHMAT5EFkCXCQUeQ==
+
+"@grapecity-software/spread-sheets-designer-vue@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-designer-vue/-/spread-sheets-designer-vue-17.0.2.tgz#37d89b54007f18447b55746c91a381dedcf1d966"
+  integrity sha512-uIQ0R6d+fUWN4YIvACCQNEvD4D5hkiRiJwos6kiVHaXQWAmIpBCJAPzEDk45M+qtJnE5cjW2ZiHnn/EbPTNChg==
+
+"@grapecity-software/spread-sheets-designer@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-designer/-/spread-sheets-designer-17.0.2.tgz#dd722cd6afe1a86efbbc6536a79322f3c08eb109"
+  integrity sha512-XEiaVzJcCkwxn0esB8UqPDHRONr2RAl6em+vBgR8tpj418C94iMf8bXQGpkEJ0wShQGv0nrB+PleGRWQKzd/PQ==
+
+"@grapecity-software/spread-sheets-formula-panel@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-formula-panel/-/spread-sheets-formula-panel-17.0.2.tgz#d218e39819e7da9606ab054ed06db09259f0ed7a"
+  integrity sha512-OKS0UXtE4ylIHxYGlSgmAyvv18VPOT+3Tlb0wdIju4WRnMbZH9aBBD7/R6WLtXRwU0QMCN41qywKccMgLF98lg==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-ganttsheet@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-ganttsheet/-/spread-sheets-ganttsheet-17.0.2.tgz#fea080cb2a439e6a0a339d1c5b7d56740d91c463"
+  integrity sha512-TS3/vQZnGdWpVC1fM0XcqZCFmWHSA3lXvCE3SqnpVB7MllVTgC8iP99wTlFVl6CPr+18NdFFEUAXjAfi3NWd3A==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+    "@grapecity-software/spread-sheets-tablesheet" "17.0.2"
+
+"@grapecity-software/spread-sheets-io@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-io/-/spread-sheets-io-17.0.2.tgz#516f623e5bf9dff686800c937e5aba8d5d20562a"
+  integrity sha512-MwDz1RzCFmgylUuHElDpz3s5/IMUswaoIQ55pYFu2KLJ0mqgrZ2mHKArKOV84zn0Mzf/EwIO6c5VGVHk2gYqGw==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-languagepackages@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-languagepackages/-/spread-sheets-languagepackages-17.0.2.tgz#916e00bb90058769428fd9a980980431202578f9"
+  integrity sha512-JUfjGPl287gz5VbroIiqXZF5kDSLPLgnLena1///Vlal97qNP3F5S04aJjkYmwv1WD2NEDCWDDmpuCpJKxeUgw==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-pdf@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-pdf/-/spread-sheets-pdf-17.0.2.tgz#77ed6898888a9c38aae1e49014893d75a8137193"
+  integrity sha512-ndqZVbNE8S/W53COUFEZL6F5o8cpJJNtmyQogieA/TTELTrsBJzu278Dd9Xp4myp6BVwucK3GGIyeVUymAvbOQ==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+    "@grapecity-software/spread-sheets-print" "17.0.2"
+
+"@grapecity-software/spread-sheets-pivot-addon@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-pivot-addon/-/spread-sheets-pivot-addon-17.0.2.tgz#02bafcb8b2cdb572fb62e4c51e21bbd33de08b50"
+  integrity sha512-8Q3xNzq2aqrIHeVkq7F3GF2dy8HkhkvBcBPbZdWg5GL3dnu4ko7D+GAE9uCYh3jMwOtXzrlAvWiyhHxzbD/nDQ==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+    "@grapecity-software/spread-sheets-shapes" "17.0.2"
+
+"@grapecity-software/spread-sheets-print@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-print/-/spread-sheets-print-17.0.2.tgz#2f0af40270c23634d27727765308e73ae7eaf93a"
+  integrity sha512-0jpj93RNvzgsLDcPJIozRfRdxdznnJLfBjKkAp0boAePCvzjaPA+gpKqysu/ZcZ4f4GO8DRGOhc6XJeJ4l4l/g==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-reportsheet-addon@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-reportsheet-addon/-/spread-sheets-reportsheet-addon-17.0.2.tgz#567ce5b049f6fdbeedbf8d196a8b628affbcd79a"
+  integrity sha512-i7/6ESb4Rs0XrL0xmJ0WrMkwpV8rqwMOWM6XrNAlnBdxOgkECET63BtedPnlrY6F6ZTbuj2HcvHgnE0IzfTALQ==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+    "@grapecity-software/spread-sheets-print" "17.0.2"
+
+"@grapecity-software/spread-sheets-resources-zh@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-resources-zh/-/spread-sheets-resources-zh-17.0.2.tgz#423adea6ec0d8222ce1df644ca7fee634d7eaf7c"
+  integrity sha512-VBm+4AzgPDv6+lsAqTC7CZplGZnglW8EwF3LRXhXymLw7WVhOSgnN2++XQsWh6vPW/k773GpyuPJh0PRUjkRGQ==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-shapes@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-shapes/-/spread-sheets-shapes-17.0.2.tgz#9fda386a3d0c037c36271aba310926485530a5df"
+  integrity sha512-nPixJ+snXhiRDgOgtEdOYW/n5A+lG7iWYnVs4PxRldusS47mkZi3muxrQAs6n64Rnqz/JLebK4xCKIsf0PdXSQ==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-slicers@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-slicers/-/spread-sheets-slicers-17.0.2.tgz#2d07b9eedc934a0d8ab17cd2ddd5a73d3f918d42"
+  integrity sha512-2n2dlZslSRS7o65nFRlT5/q/mI+uewhmZNz6Rm/82FDIV+22PTJulCSoR+aSzbq7+7ewmp911WyMKBs/4w5NEg==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+    "@grapecity-software/spread-sheets-shapes" "17.0.2"
+
+"@grapecity-software/spread-sheets-tablesheet@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-tablesheet/-/spread-sheets-tablesheet-17.0.2.tgz#f25f86621122f90ae85d1b5d298bbea59cb1fb01"
+  integrity sha512-EeM6aCwAORNkRutc+JLnWuC153aguDPrfc+ZEmK2yWWdjTTQMz1u2KiZxX55mAfqGPeMPaoBMWi+9cbXiYgyEA==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
+
+"@grapecity-software/spread-sheets-vue@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets-vue/-/spread-sheets-vue-17.0.2.tgz#70d8da86ca7ac50403bc1d6d702188931b6db7de"
+  integrity sha512-ffLHd/JWTEXBtvJRxOzQzllQ5moYxSbNXgPMthtXWxmCh/wse0Ki1vplZgCCImRAhuB9+/DTUOvgFr7U/j/bag==
+  dependencies:
+    "@grapecity-software/spread-sheets" "17.0.2"
     tiny-emitter "^2.1.0"
 
-"@grapecity-software/spread-sheets@17.0.6", "@grapecity-software/spread-sheets@^17.0.2":
-  version "17.0.6"
-  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets/-/spread-sheets-17.0.6.tgz#0073dc5bb4b6ca12253b9d04376e13810593b7ba"
-  integrity sha512-jdixFCM6hc8wvN5B+zajQJGASD3jYMlWbMhh9UenWy0Y8d5L7gtSjQIXQRnyVYu0gQn43k2M872/6rtOoKPHDw==
+"@grapecity-software/spread-sheets@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.npmjs.org/@grapecity-software/spread-sheets/-/spread-sheets-17.0.2.tgz#07b5483da2db1501271091b0a4b666448bf6404a"
+  integrity sha512-ujOjFen74r2dLXNZBfXO0A9CXEpXFMeLKquuYV7GjpRSsYYDeL/cDPUecCdbDaqLwkA82db7/icJ5isT3/muoA==
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"

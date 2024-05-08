@@ -4,6 +4,7 @@ import 'ant-design-vue/dist/reset.css'
 import './style.css'
 import router from '@/router'
 import { GcSpreadSheets, GcWorksheet } from '@grapecity-software/spread-sheets-vue'
+import Designer from "@grapecity-software/spread-sheets-designer-vue"
 
 let app = createApp(App)
 
@@ -15,6 +16,7 @@ window.electron = electron
 
 app.component('GcSpreadSheets', GcSpreadSheets)
 app.component('GcWorksheet', GcWorksheet)
+app.component("GcDesigner", Designer)
 
 app.config.errorHandler = (err) => {
   if (err) {

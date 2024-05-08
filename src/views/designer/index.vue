@@ -1,8 +1,13 @@
 <script setup>
 import { reactive, ref } from 'vue'
-import { useMouse } from '@/hooks/event/useMouse'
 
-const { x, y } = useMouse()
+const styleInfo = { height: "600px", width: "100%" }
+
+const designer = ref(null)
+
+const designerInitialized = (e) => {
+  designer.value = e.designer
+}
 
 const dataTable = reactive([
   {
@@ -22,46 +27,17 @@ const dataTable = reactive([
   },
 ])
 
-const openFile = () => {
-  const res = window.electron.ipcRenderer.send('readFile')
-  console.log(res)
-}
-
-
-const saveFile = () => {
-  const res = window.electron.ipcRenderer.sendSync('writeFile', 'files/test.txt', '我是内vsfsgs容')
-  console.log(res ? '保存成功' : '保存失败')
-}
-
-const toogleConsole = () => {
-  window.electron.ipcRenderer.send('toggleDevTools')
-}
-
 </script>
 
 <template>
-  <div >
-    <!-- <div>Mouse position is at: {{ x }}, {{ y }}</div> -->
-    <a-button @click="openFile">打开文件</a-button>
-    <a-button @click="saveFile">保存文件</a-button>
-    <a-button @click="toogleConsole">控制台</a-button>
-    <!-- <a-icon type="border" /> -->
-    <div class="spreadContainer">
-      <GcSpreadSheets :hostClass='"spreadHost"'>
-        <GcWorksheet :dataSource="dataTable"/>
-      </GcSpreadSheets>
-    </div>
+  <div>
+    <GcDesigner :styleInfo="styleInfo"
+      @designerInitialized="designerInitialized"
+    >
+    </GcDesigner>
   </div>
 </template>
 
 <style scoped>
-.spreadContainer {
-  padding: 10px;
-  box-shadow: 0 0 20px grey;
-  height: 800px;
-}
-.spreadHost{
-  width: 100%;
-  height: 100%;
-}
+
 </style>
