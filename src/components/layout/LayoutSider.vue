@@ -1,37 +1,58 @@
 <script setup>
-import { UserOutlined, LaptopOutlined } from '@ant-design/icons-vue'
-</script>
+import { reactive, watch, h } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
+const router = useRouter()
+const route = useRoute()
+
+const state = reactive({
+  selectedKeys: [],
+  openKeys: []
+})
+
+const items = reactive([
+  {
+    key: 'table',
+    label: '表格'
+  },
+  {
+    key: 'designer',
+    label: '设计器'
+  },
+  {
+    key: 'sub1',
+    label: 'Navigation One',
+    children: [
+      {
+        key: '5',
+        label: 'Option 5'
+      },
+      {
+        key: '6',
+        label: 'Option 6'
+      }
+    ]
+  }
+])
+
+function jump (item) {
+  router.push({ name: item.key })
+}
+
+watch(() => route.name, (val) => {
+  state.selectedKeys = [val]
+}, { immediate: true })
+</script>
 
 <template>
   <a-layout-sider width="200" style="background: #fff">
     <a-menu
-      v-model:selectedKeys="selectedKeys2"
-      v-model:openKeys="openKeys"
+      v-model:openKeys="state.openKeys"
+      v-model:selectedKeys="state.selectedKeys"
       mode="inline"
-      :style="{ height: '100%', borderRight: 0 }"
+      :items="items"
+      @select="jump"
     >
-      <a-sub-menu key="sub1">
-        <template #title>
-          <span>
-            <user-outlined />
-            subnav 1
-          </span>
-        </template>
-        <a-menu-item key="1">option1</a-menu-item>
-        <a-menu-item key="2">option2</a-menu-item>
-        <a-menu-item key="3">option3</a-menu-item>
-        <a-menu-item key="4">option4</a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub2">
-        <template #title>
-          <span>
-            <laptop-outlined />
-            subnav 2
-          </span>
-        </template>
-        <a-menu-item key="5">option5</a-menu-item>
-      </a-sub-menu>
     </a-menu>
   </a-layout-sider>
 </template>

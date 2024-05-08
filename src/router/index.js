@@ -7,10 +7,11 @@ const routes = [
   // { path: '/', component: () => import('@/components/HelloWorld.vue') },
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/table',
     component: Layout,
     children: [
-      { path: 'home', component: () => import('@/views/home/index.vue') },
+      { path: 'table', name: 'table', component: () => import('@/views/table/index.vue') },
+      { path: 'designer', name: 'designer', component: () => import('@/views/designer/index.vue') },
     ]
   }
 ]

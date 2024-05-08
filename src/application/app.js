@@ -75,9 +75,9 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
 })
 
+// 初始化
 const init = () => {
   console.log('---init---')
-  // 初始化
   // protocol
   app.setAsDefaultProtocolClient('silence')
 

@@ -17,7 +17,21 @@ app.component('GcSpreadSheets', GcSpreadSheets)
 app.component('GcWorksheet', GcWorksheet)
 
 app.config.errorHandler = (err) => {
-  if (err) console.log('哎呦喂，出错了：', err)
+  if (err) {
+    switch (err.message) {
+      case "Cannot read properties of null (reading 'ipcRenderer')":
+        alert('渲染进程未启动，请重启应用')
+        break
+      case 'ERR_ELECTRON_RENDER_CRASHED':
+        console.log('渲染进程崩溃，请重启应用')
+        break
+      case 'ERR_ELECTRON_RENDER_PROCESS_TERMINATED':
+        console.log('渲染进程被终止，请重启应用')
+        break
+      default:
+        console.log(222)
+    }
+  }
 }
 
 app.use(router)
