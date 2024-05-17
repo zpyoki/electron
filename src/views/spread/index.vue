@@ -1,31 +1,26 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useMouse } from '@/hooks/event/useMouse'
-import { openSjs } from '@/utils/spread'
+import { openSpread, saveSpread } from '@/utils/spread'
 
 const { x, y } = useMouse()
 
-const spread = ref(null)
+let spread = null
 
 const openFile = async () => {
-  const res = window.electron.ipcRenderer.sendSync('readFile', 'files/test2.sjs')
-  if (res.code === 0) {
-    const file = new File([res.data], 'spread.sjs')
-    const openRes = await openSjs(spread.value, file)
-    if (openRes) console.log(openRes)
+  const resTmp = window.electron.ipcRenderer.sendSync('readFile', 'files/test2.sjs')
+  if (resTmp.code === 0) {
+    const file = new File([resTmp.data], 'srread.sjs')
+    const res = await openSpread(spread, file)
+    console.log(res.msg)
   } else {
     alert(res.msg)
   }
 }
 
-const saveFile = () => {
-  spread.value.save(async function (blob) {
-    const buf = Buffer.from(await blob.arrayBuffer())
-    const res = window.electron.ipcRenderer.sendSync('writeFile', 'files/test2.sjs', buf)
-    console.log(res, res ? '保存成功' : '保存失败')
-  }, function (err) {
-    console.log(err)
-  })
+const saveFile = async () => {
+  const res = await saveSpread(spread, 'files/test2.sjs')
+  console.log(res.msg)
 }
 
 const toogleConsole = () => {
@@ -33,7 +28,7 @@ const toogleConsole = () => {
 }
 
 function initialized (value) {
-  spread.value = value
+  spread = value
 }
 
 </script>

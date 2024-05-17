@@ -1,22 +1,21 @@
-export function openSjs (spread, sjsFile, options = {}) {
+export function openSpread (spread, file, options = {}) {
   return new Promise((resolve, reject) => {
-    spread.open(sjsFile, () => {
-      resolve('')
+    spread.open(file, () => {
+      resolve({ code: 0, msg: 'ok' })
     }, (err) => {
-      resolve(err)
+      resolve({ code: -1, msg: err.message })
     }, options)
   })
 }
 
-export function saveSjs (spread, sjsFile, options = {}) {
+export function saveSpread (spread, file, options = {}) {
   return new Promise((resolve, reject) => {
     spread.save(async blob => {
       const buf = Buffer.from(await blob.arrayBuffer())
-      const res = window.electron.ipcRenderer.sendSync('writeFile', 'files/test2.sjs', buf)
-      console.log(res, res ? '保存成功' : '保存失败')
-      resolve(blob)
+      const result = window.electron.ipcRenderer.sendSync('writeFile', file, buf)
+      resolve(result)
     }, (err) => {
-      resolve(err)
+      resolve({ code: -1, msg: err.message })
     }, options)
   })
 }

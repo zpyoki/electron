@@ -28,9 +28,10 @@ const file = () => {
   ipcMain.on('writeFile', (event, ...args) => {
     const err = fse.outputFileSync(args[0], args[1])
     if (err) {
-      console.log('写入文件失败', err)
+      event.returnValue = { code: -1, msg: err.message }
+    } else {
+      event.returnValue = { code: 0, msg: 'ok'}
     }
-    event.returnValue = !err
   })
 
   // ipcMain.on('window-pin', (event) => {
