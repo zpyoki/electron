@@ -7,11 +7,12 @@ const routes = [
   // { path: '/', component: () => import('@/components/HelloWorld.vue') },
   {
     path: '/',
-    redirect: '/table',
+    redirect: '/spread',
     component: Layout,
     children: [
-      { path: 'table', name: 'table', component: () => import('@/views/table/index.vue') },
+      { path: 'spread', name: 'spread', component: () => import('@/views/spread/index.vue') },
       { path: 'designer', name: 'designer', component: () => import('@/views/designer/index.vue') },
+      { path: 'spreadPro', name: 'spreadPro', component: () => import('@/views/spreadPro/index.vue') },
     ]
   }
 ]

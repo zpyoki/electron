@@ -31,7 +31,9 @@ app.config.errorHandler = (err) => {
         console.log('渲染进程被终止，请重启应用')
         break
       default:
-        console.log(222)
+        console.log(err)
+        console.log(err.message)
+        // alert(err)
     }
   }
 }

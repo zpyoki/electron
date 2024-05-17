@@ -13,6 +13,15 @@ const build = {
     "buildResources": "src/assets",
     "output": "dist_electron"
   },
+  "fileAssociations": [
+    {
+      "ext": ["px", "sjs"],
+      "name": "px7",
+      "description": "px7 document",
+      "role": "Editor",
+      "icon": "src/assets/icons/icon.ico"
+    }
+  ],
   "win": {
     "target": [
       "nsis"

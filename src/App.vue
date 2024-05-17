@@ -7,8 +7,8 @@ import "@grapecity-software/spread-sheets-shapes"
 import "@grapecity-software/spread-sheets-slicers"
 import "@grapecity-software/spread-sheets-pivot-addon"
 import "@grapecity-software/spread-sheets-tablesheet"
-import "@grapecity-software/spread-sheets-ganttsheet"
-import "@grapecity-software/spread-sheets-reportsheet-addon"
+// import "@grapecity-software/spread-sheets-ganttsheet"
+// import "@grapecity-software/spread-sheets-reportsheet-addon"
 import "@grapecity-software/spread-sheets-formula-panel"
 import "@grapecity-software/spread-sheets-io"
 import '@grapecity-software/spread-sheets-resources-zh'
@@ -19,6 +19,7 @@ import "@grapecity-software/spread-sheets-designer"
 // GC.Spread.Sheets.LicenseKey = 'openapi.enfi.com.cn,E943974888865895#B1DYtGVwoHeNhXNnVVdtpkRWhFe4NzZYNlN756LDx4VXJjRhl4d8pGbpFzM0FDcDRXROl6RCNkWiZGULp5VCNjcWF4c7JlS5tkS65EOMlGUKpVN43Edww6VwNkVxsCWWpmbH3WNVlmW9sENOBnZyYzcVFUTNhjMqRXMsR6MSRVMpZXeV3kdCtCNYtmNCJ5SR9kNvcDUsRTcllETLhDMEBnexImSZlUVEl4N9pnZ7oGMiZDNhNGTUlGWRlTUI3mNTRXZoZVMrd4drkDSOdkSKZjRSFldVlEN5NlMMN4YXlHTQNkN7pEOFljUhRzQwJXZOdjZjFHV546QpZna9RWZY5WVMZzU7FDUiojITJCLiMjNDdDNxYUNiojIIJCL4QTN6ITO4YzM0IicfJye&Qf35VfiUVQLFlI0IyQiwiI7EjL6ByUKBCZhVmcwNlI0IiTis7W0ICZyBlIsICOzATNyADI7ADNwQjMwIjI0ICdyNkIsIiNwYDM4IDMyIiOiAHeFJCLi86Yu46bj9Sam9WZukGch9WZw3mI0IyctRkIsIisPieqBaevbWer8SuI0ISYONkIsUWdyRnOiwmdFJCLiUTO8UjN8gDO8QzN9MDN9IiOiQWSiwSfdJSZsJWYUR7b6lGUislOicGbmJCLlNHbhZmOiI7ckJye0ICbuFkI1pjIEJCLi4TPRFDbxQ4VaNmV8dkV93Ge6pVZ4tSc9ZHS0lnQ8ZlN0hjSWFjePF6R59GUSJmUW3Cd8oEdw3ESQNDe5IFN6UUeydmQhJ7KUVUcnJTbmJ4GxmV'
 GC.Spread.Sheets.LicenseKey = 'openapi.enfi.com.cn,268181326347254#B1XMdpmQYBzSa9UONF7SrETe99kdHdFdG5mSIdWTEVlUyplZkN5KM3GcLJzbalkMnVnM4R5dkZGSRJTa7RFdBNFcSRkcXFjakFzYolnQvZXYNFGb6Q6dGNTMHR7RXp7ZWlTRXBjbIVldsNkQrtGR05WT9c5QlZ6M5tEO98mSHZVWJRmTHNDR4lDax3yV7Y6ZwgjU5claEJmaxR4QPV5RwxESMNTY7Zma8ZDZVpmT6RGTXdlSPN4TmpWTP34Vi5ESIFHR4oHNaNDRlR4NS3kchpGZ7BVMkd6cxIDeElVOVhWRHRHWFxGO5FWVIhUOmtWY5VkaEpEOB5UMmtSd4cDZNJWWz9USoRESP3yVSpkSiojITJCLigjNzETR5UTNiojIIJCL6ADN4QDMwATN0IicfJye#4Xfd5nIVF4SRJiOiMkIsIyNx8idgMlSgQWYlJHcTJiOi8kI1tlOiQmcQJCLigTN9EzNwACOwQDM4IDMyIiOiQncDJCLiYDM6ADNyAjMiojIwhXRiwiIuNmLt36YukmZuVmLpBXYuVGcvJiOiMXbEJCLig1jlzahlDZmpnInm/KnmDoimvIqnX0tlL1jonagm71ml7KukLiOiEmTDJCLiQTNycDNzYjMzEDOxgjNyIiOiQWSiwSfdJSZsJWYUR7b6lGUislOicGbmJCLlNHbhZmOiI7ckJye0ICbuFkI1pjIEJCLi4TPRp6aGVENDFzdhZGSjp5aatWdshDUvZDcz2UOaxUTRllYQZ7QrMUdn5Ga6FXMNdTV9pkU5lzT056LYNUUkZ6YlFkb6JVZ6dhS5V'
 GC.Spread.Common.CultureManager.culture("zh-cn")
+window.GC = GC
 </script>
 
 <template>
@@ -26,16 +27,5 @@ GC.Spread.Common.CultureManager.culture("zh-cn")
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>

@@ -1,31 +1,26 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-const styleInfo = { height: "600px", width: "100%" }
+const styleInfo = { height: "740px", width: "100%" }
 
-const designer = ref(null)
+// const designer = ref(null)
+let designer = null
 
 const designerInitialized = (e) => {
-  designer.value = e.designer
+  designer = e
+  console.log(designer)
+  console.log(designer.spread)
+  console.log(designer.Spread)
+  designer.Spread.options.allowExtendPasteRange = true
+  // designer.options.allowExtendPasteRange = true
+  // designer.value = e
+  // console.log(designer)
+  // console.log(designer.value)
+  // console.log(designer.value.spread).
+  // designer.value.spread.options.allowInsertRows = true
+  // designer.value.spread.options.allowInsertColumns = true
+  // designer.value.spread.options.allowExtendPasteRange = true
 }
-
-const dataTable = reactive([
-  {
-    name: '张三',
-    age: 18,
-    gender: '男',
-  },
-  {
-    name: '李四',
-    age: 20,
-    gender: '男',
-  },
-  {
-    name: '王五',
-    age: 22,
-    gender: '男',
-  },
-])
 
 </script>
 

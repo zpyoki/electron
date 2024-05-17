@@ -12,12 +12,16 @@ const state = reactive({
 
 const items = reactive([
   {
-    key: 'table',
+    key: 'spread',
     label: '表格'
   },
   {
     key: 'designer',
     label: '设计器'
+  },
+  {
+    key: 'spreadPro',
+    label: '表格pro'
   },
   {
     key: 'sub1',
