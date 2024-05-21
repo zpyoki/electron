@@ -15,13 +15,21 @@ const build = {
   },
   "fileAssociations": [
     {
-      "ext": ["px", "sjs"],
+      "ext": "px",
       "name": "px7",
       "description": "px7 document",
       "role": "Editor",
       "icon": "src/assets/icons/icon.ico"
+    },
+    {
+      "ext": "sjs",
+      "name": "sjs",
+      "description": "sjs document",
+      "role": "Editor",
+      "icon": "src/assets/icons/icon.ico"
     }
   ],
+  "extraResources": ["files"],
   "win": {
     "target": [
       "nsis"

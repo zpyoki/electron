@@ -8,18 +8,13 @@ const { x, y } = useMouse()
 let spread = null
 
 const openFile = async () => {
-  const resTmp = window.electron.ipcRenderer.sendSync('readFile', 'files/test2.sjs')
-  if (resTmp.code === 0) {
-    const file = new File([resTmp.data], 'srread.sjs')
-    const res = await openSpread(spread, file)
-    console.log(res.msg)
-  } else {
-    alert(res.msg)
-  }
+  const res = await openSpread(spread, 'test.sjs')
+  console.log(res.msg)
+  console.log(res)
 }
 
 const saveFile = async () => {
-  const res = await saveSpread(spread, 'files/test2.sjs')
+  const res = await saveSpread(spread, 'test2.sjs')
   console.log(res.msg)
 }
 
@@ -41,7 +36,6 @@ function initialized (value) {
     <a-button @click="toogleConsole">控制台</a-button>
     <!-- <a-icon type="border" /> -->
     <div class="spreadContainer">
-      <input id='fileItem' type="file">
       <GcSpreadSheets :hostClass='"spreadHost"' @workbookInitialized='initialized'>
         <!-- <GcWorksheet :dataSource="dataTable" /> -->
       </GcSpreadSheets>

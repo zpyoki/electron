@@ -1,4 +1,4 @@
-import { BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import { platform } from 'os'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -8,25 +8,28 @@ import fileSaver from 'file-saver'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-// const filePath = path.join(__dirname, `../../package.json`)
+const isProduction = process.env.NODE_ENV !== 'development'
+const fileRoot = app.isPackaged
+  ? path.join(app.getAppPath(), '../files')
+  : path.join(app.getAppPath(), 'files')
 
-const readFile = (path) => {
+const readFile = (filePath) => {
   try {
-    const result = fse.readFileSync(path)
-    return { code: 0, data: result}
+    const result = fse.readFileSync(filePath)
+    return { code: 0, data: result }
   } catch (err) {
     return { code: -1, msg: err.message }
   }
 }
 
 const file = () => {
-  ipcMain.on('readFile', async (event, path) => {
-    const result = await readFile(path)
+  ipcMain.on('readFile', async (event, filePath) => {
+    const result = await readFile(path.join(fileRoot, filePath))
     event.returnValue = result
   })
 
   ipcMain.on('writeFile', (event, ...args) => {
-    const err = fse.outputFileSync(args[0], args[1])
+    const err = fse.outputFileSync(path.join(fileRoot, args[0]), args[1])
     if (err) {
       event.returnValue = { code: -1, msg: err.message }
     } else {

@@ -51,13 +51,15 @@ const createWindow = () => {
     mainWindow.loadURL("http://localhost:8888")
     mainWindow.webContents.openDevTools()
   }
+
+  init()
   
   mainWindow.on('ready-to-show', () => {
     console.log('---readyToShow---')
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined')
     } else {
-      init()
+      // init()
     }
   })
 }
