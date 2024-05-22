@@ -8,13 +8,14 @@ const { x, y } = useMouse()
 let spread = null
 
 const openFile = async () => {
-  const res = await openSpread(spread, 'test.sjs')
+  // const res = await openSpread(spread, 'QuickQuotation.sjs')
+  const res = await openSpread(spread, 'demo.sjs')
   console.log(res.msg)
-  console.log(res)
 }
 
 const saveFile = async () => {
-  const res = await saveSpread(spread, 'test2.sjs')
+  // const res = await saveSpread(spread, 'QuickQuotation.sjs')
+  const res = await saveSpread(spread, 'demo.sjs')
   console.log(res.msg)
 }
 
@@ -24,16 +25,18 @@ const toogleConsole = () => {
 
 function initialized (value) {
   spread = value
+  spread.options.allowExtendPasteRange = true
+  console.log(spread.options)
 }
 
 </script>
 
 <template>
   <div >
-    <!-- <div>Mouse position is at: {{ x }}, {{ y }}</div> -->
-    <a-button @click="openFile">打开文件</a-button>
-    <a-button @click="saveFile">保存文件</a-button>
-    <a-button @click="toogleConsole">控制台</a-button>
+    <div class='operator'>
+      <a-button @click="openFile">打开文件</a-button>
+      <a-button @click="saveFile">保存文件</a-button>
+    </div>
     <!-- <a-icon type="border" /> -->
     <div class="spreadContainer">
       <GcSpreadSheets :hostClass='"spreadHost"' @workbookInitialized='initialized'>
@@ -47,9 +50,9 @@ function initialized (value) {
 .spreadContainer {
   padding: 10px;
   box-shadow: 0 0 20px grey;
-  height: 500px;
+  height: calc(100vh - 56px - 32px - 32px - 32px);
 }
-.spreadHost{
+.spreadHost {
   width: 100%;
   height: 100%;
 }

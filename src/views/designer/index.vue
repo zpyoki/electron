@@ -8,9 +8,6 @@ let designer = null
 
 const designerInitialized = (e) => {
   designer = e
-  console.log(designer)
-  console.log(designer.spread)
-  console.log(designer.Spread)
   designer.Spread.options.allowExtendPasteRange = true
   // designer.options.allowExtendPasteRange = true
   // designer.value = e

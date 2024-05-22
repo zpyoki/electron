@@ -3,7 +3,7 @@ function openSpreadExce (spread, blob, options = {}) {
     spread.open(blob, () => {
       resolve({ code: 0, msg: 'open spread ok' })
     }, (err) => {
-      resolve({ code: -1, msg: err.message })
+      resolve({ code: -1, msg: err.errorMessage })
     }, options)
   })
 }
