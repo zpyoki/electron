@@ -26,7 +26,7 @@ const toogleConsole = () => {
 function initialized (value) {
   spread = value
   spread.options.allowExtendPasteRange = true
-  console.log(spread.options)
+  // console.log(spread.options)
 }
 
 </script>
