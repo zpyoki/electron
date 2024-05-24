@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 function openSpreadExce (spread, blob, options = {}) {
   return new Promise((resolve, reject) => {
     spread.open(blob, () => {
@@ -8,7 +10,7 @@ function openSpreadExce (spread, blob, options = {}) {
   })
 }
 
-export async function openSpread (spread, file, options = {}) {
+export const openSpread = async (spread, file, options = {}) => {
   let result = {}
   const resFile = window.electron.ipcRenderer.sendSync('readFile', file)
   if (resFile.code === 0) {
@@ -20,7 +22,7 @@ export async function openSpread (spread, file, options = {}) {
   return result
 }
 
-export function saveSpread (spread, file, options = {}) {
+export const saveSpread = (spread, file, options = {}) => {
   return new Promise((resolve, reject) => {
     spread.save(async blob => {
       const buf = Buffer.from(await blob.arrayBuffer())

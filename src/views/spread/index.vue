@@ -1,7 +1,8 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useMouse } from '@/hooks/event/useMouse'
-import { openSpread, saveSpread } from '@/utils/spread'
+import { openSpread, saveSpread } from '@/hooks/spread/useSpread'
+// import { openSpread, saveSpread } from '@/hooks/spread'
 
 const { x, y } = useMouse()
 
