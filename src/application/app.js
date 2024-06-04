@@ -1,5 +1,5 @@
 import path from 'path'
-import { app, BrowserWindow, nativeImage } from 'electron'
+import { app, BrowserWindow, nativeImage, Notification } from 'electron'
 import { fileURLToPath } from 'url'
 import config from '../utils/config.js'
 import electronUtils from './electrons/index.js'
@@ -31,6 +31,10 @@ const createWindow = () => {
     title: config.projectName,
     width: 950,
     height: 700,
+    // titleBarStyle: 'hidden',
+    titleBarStyle: 'hiddenInset',
+    // frame: false,
+    transparent: true,
     icon: getAssetPath(config.ico),
     // icon: nativeImage.createFromPath(getAssetPath(config.ico)),
     // icon: nativeImage.createFromPath(getAssetPath('icons/icon.icns')),
@@ -71,7 +75,6 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 })
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()

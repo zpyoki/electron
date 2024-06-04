@@ -12,9 +12,9 @@ function toogleConsole() {
 
 
 <template>
-  <a-layout-header style='background: #fff;padding: 0;height: 56px;'>
+  <a-layout-header class='dragable' style='background: #fff;padding: 0;height: 56px;'>
     <div style='height: inherit;'>LOGO</div>
-    <div>
+    <div class='dragless'>
       <a-button @click="reloadPage">刷新</a-button>
       <a-button @click="toogleConsole">控制台</a-button>
     </div>

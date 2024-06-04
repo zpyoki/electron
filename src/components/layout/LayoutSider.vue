@@ -49,8 +49,8 @@ watch(() => route.name, (val) => {
 </script>
 
 <template>
-  <a-layout-sider width="200" style="background: #fff">
-    <a-menu
+  <a-layout-sider class='dragable' width="200" style="background: #fff">
+    <a-menu class='dragless'
       v-model:openKeys="state.openKeys"
       v-model:selectedKeys="state.selectedKeys"
       mode="inline"

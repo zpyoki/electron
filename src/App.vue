@@ -25,6 +25,12 @@ window.GC = GC
   <RouterView />
 </template>
 
-<style scoped>
-
+<style>
+.dragable {
+  user-select: none;
+  -webkit-app-region: drag;
+}
+.dragless {
+  -webkit-app-region: no-drag;
+}
 </style>
