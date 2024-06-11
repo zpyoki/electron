@@ -12,8 +12,9 @@ function toogleConsole() {
 
 
 <template>
-  <a-layout-header class='dragable' style='background: #fff;padding: 0;height: 56px;'>
-    <div style='height: inherit;'>LOGO</div>
+  <a-layout-header class='dragable'>
+    <!-- <div style='height: inherit;'>LOGO</div> -->
+    <div></div>
     <div class='dragless'>
       <a-button @click="reloadPage">刷新</a-button>
       <a-button @click="toogleConsole">控制台</a-button>
@@ -25,5 +26,13 @@ function toogleConsole() {
 .ant-layout-header {
   display: flex;
   justify-content: space-between;
+  background: #fff;
+  padding: 0;
+  height: var(--px-layout-header-height);
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, .08);
+  z-index: 1;
+  position: fixed;
+  top: 0;
 }
 </style>

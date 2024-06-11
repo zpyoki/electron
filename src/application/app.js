@@ -33,7 +33,7 @@ const createWindow = () => {
     height: 700,
     // titleBarStyle: 'hidden',
     titleBarStyle: 'hiddenInset',
-    // frame: false,
+    frame: false,
     transparent: true,
     icon: getAssetPath(config.ico),
     // icon: nativeImage.createFromPath(getAssetPath(config.ico)),

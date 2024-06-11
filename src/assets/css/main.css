@@ -1,0 +1,21 @@
+/* @import './light.css'; */
+
+:root {
+  /* color-scheme: light dark; */
+
+  /* height */
+  /* --px-height-1: 52px; */
+
+  /* width */
+  /* --px-width-1: 200px; */
+
+  /* layout */
+  --px-layout-header-height: 56px;
+  /* --px-layout-sider-width: var(--enfi-width-1);
+  --px-layout-sider-background: var(--enfi-primary-color-light);
+  --px-layout-content-background: var(--enfi-primary-color-focus); */
+
+  /* space */
+  --px-gap-1: 8px;
+  --px-gap-2: 16px;
+}

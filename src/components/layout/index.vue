@@ -6,9 +6,9 @@ import LayoutContent from './LayoutContent.vue'
 
 
 <template>
-  <a-layout>
+  <a-layout class='layout'>
     <LayoutHeader />
-    <a-layout>
+    <a-layout style='margin-top: var(--px-layout-header-height);'>
       <LayoutSider />
       <LayoutContent />
     </a-layout>
@@ -16,5 +16,8 @@ import LayoutContent from './LayoutContent.vue'
 </template>
 
 <style scoped>
-
+.layout {
+  /* height: 100vh; */
+  overflow: auto;
+}
 </style>

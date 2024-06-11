@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import 'ant-design-vue/dist/reset.css'
-import './style.css'
+import './assets/css/main.css'
 import router from '@/router'
 import { GcSpreadSheets, GcWorksheet } from '@grapecity-software/spread-sheets-vue'
 import Designer from "@grapecity-software/spread-sheets-designer-vue"

@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import admin from './admin'
 
 const Layout = () => import('@/components/layout/index.vue')
 
@@ -7,12 +8,18 @@ const routes = [
   // { path: '/', component: () => import('@/components/HelloWorld.vue') },
   {
     path: '/',
-    redirect: '/spread',
+    redirect: '/workbench',
     component: Layout,
     children: [
-      { path: 'spread', name: 'spread', component: () => import('@/views/spread/index.vue') },
-      { path: 'designer', name: 'designer', component: () => import('@/views/designer/index.vue') },
-      { path: 'spreadPro', name: 'spreadPro', component: () => import('@/views/spreadPro/index.vue') },
+      ...admin,
+      {
+        path: 'emolument',
+        name: 'emolument',
+        component: () => import('@/views/emolument/index.vue'),
+        meta: {
+          title: '表格'
+        }
+      }
     ]
   }
 ]

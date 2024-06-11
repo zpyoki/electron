@@ -1,6 +1,7 @@
 <script setup>
 import { reactive, watch, h } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import adminMenu from '@/router/admin'
 
 const router = useRouter()
 const route = useRoute()
@@ -10,34 +11,12 @@ const state = reactive({
   openKeys: []
 })
 
-const items = reactive([
-  {
-    key: 'spread',
-    label: '表格'
-  },
-  {
-    key: 'designer',
-    label: '设计器'
-  },
-  {
-    key: 'spreadPro',
-    label: '表格pro'
-  },
-  {
-    key: 'sub1',
-    label: 'Navigation One',
-    children: [
-      {
-        key: '5',
-        label: 'Option 5'
-      },
-      {
-        key: '6',
-        label: 'Option 6'
-      }
-    ]
+const items = reactive(adminMenu.map(item => {
+  return {
+    key: item.name,
+    label: item.meta.title
   }
-])
+}))
 
 function jump (item) {
   router.push({ name: item.key })

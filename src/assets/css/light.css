@@ -1,0 +1,112 @@
+:root,
+:root[theme-mode='light'] {
+  --enfi-primary-color-1: rgba(0, 75, 141, 10%);
+  --enfi-primary-color-2: rgba(0, 75, 141, 20%);
+  --enfi-primary-color-3: rgba(0, 75, 141, 30%);
+  --enfi-primary-color-4: rgba(0, 75, 141, 40%);
+  --enfi-primary-color-5: rgba(0, 75, 141, 50%);
+  --enfi-primary-color-6: rgba(0, 75, 141, 60%);
+  --enfi-primary-color-7: rgba(0, 75, 141, 70%);
+  --enfi-primary-color-8: rgba(0, 75, 141, 80%);
+  --enfi-primary-color-9: rgba(0, 75, 141, 90%);
+  --enfi-primary-color-10: @primary-color;
+  --enfi-brand-color-1: rgba(0, 39, 86, 10%);
+  --enfi-brand-color-2: rgba(0, 39, 86, 20%);
+  --enfi-brand-color-3: rgba(0, 39, 86, 30%);
+  --enfi-brand-color-4: rgba(0, 39, 86, 40%);
+  --enfi-brand-color-5: rgba(0, 39, 86, 50%);
+  --enfi-brand-color-6: rgba(0, 39, 86, 60%);
+  --enfi-brand-color-7: rgba(0, 39, 86, 70%);
+  --enfi-brand-color-8: rgba(0, 39, 86, 80%);
+  --enfi-brand-color-9: rgba(0, 39, 86, 90%);
+  --enfi-brand-color-10: @brand-color;
+  --enfi-warning-color-1: rgba(255, 138, 0, 10%);
+  --enfi-warning-color-2: rgba(255, 138, 0, 20%);
+  --enfi-warning-color-3: rgba(255, 138, 0, 30%);
+  --enfi-warning-color-4: rgba(255, 138, 0, 40%);
+  --enfi-warning-color-5: rgba(255, 138, 0, 50%);
+  --enfi-warning-color-6: rgba(255, 138, 0, 60%);
+  --enfi-warning-color-7: rgba(255, 138, 0, 70%);
+  --enfi-warning-color-8: rgba(255, 138, 0, 80%);
+  --enfi-warning-color-9: rgba(255, 138, 0, 90%);
+  --enfi-warning-color-10: @warning-color;
+  --enfi-error-color-1: rgba(204, 2, 2, 10%);
+  --enfi-error-color-2: rgba(204, 2, 2, 20%);
+  --enfi-error-color-3: rgba(204, 2, 2, 30%);
+  --enfi-error-color-4: rgba(204, 2, 2, 40%);
+  --enfi-error-color-5: rgba(204, 2, 2, 50%);
+  --enfi-error-color-6: rgba(204, 2, 2, 60%);
+  --enfi-error-color-7: rgba(204, 2, 2, 70%);
+  --enfi-error-color-8: rgba(204, 2, 2, 80%);
+  --enfi-error-color-9: rgba(204, 2, 2, 90%);
+  --enfi-error-color-10: @error-color;
+  --enfi-success-color-1: rgba(23, 184, 19, 10%);
+  --enfi-success-color-2: rgba(23, 184, 19, 20%);
+  --enfi-success-color-3: rgba(23, 184, 19, 30%);
+  --enfi-success-color-4: rgba(23, 184, 19, 40%);
+  --enfi-success-color-5: rgba(23, 184, 19, 50%);
+  --enfi-success-color-6: rgba(23, 184, 19, 60%);
+  --enfi-success-color-7: rgba(23, 184, 19, 70%);
+  --enfi-success-color-8: rgba(23, 184, 19, 80%);
+  --enfi-success-color-9: rgba(23, 184, 19, 90%);
+  --enfi-success-color-10: @success-color;
+  --enfi-white-color-1: rgba(255, 255, 255, 100%);
+  --enfi-white-color-2: rgba(255, 255, 255, 55%);
+  --enfi-white-color-3: rgba(255, 255, 255, 35%);
+  --enfi-white-color-4: rgba(255, 255, 255, 22%);
+  --enfi-gray-color-1: #ccc;
+  --enfi-gray-color-2: #999;
+  --enfi-gray-color-3: #666;
+  --enfi-gray-color-4: #333;
+
+  /* font */
+  --enfi-font-white-1: var(--enfi-white-color-1);
+  --enfi-font-white-2: var(--enfi-white-color-2);
+  --enfi-font-white-3: var(--enfi-white-color-3);
+  --enfi-font-white-4: var(--enfi-white-color-4);
+  --enfi-font-gray-1: var(--enfi-gray-color-1);
+  --enfi-font-gray-2: var(--enfi-gray-color-2);
+  --enfi-font-gray-3: var(--enfi-gray-color-3);
+  --enfi-font-gray-4: var(--enfi-gray-color-4);
+
+  /* base color */
+  --enfi-primary-color: var(--enfi-primary-color-10);
+  --enfi-warning-color: var(--enfi-warning-color-10);
+  --enfi-error-color: var(--enfi-error-color-10);
+  --enfi-success-color: var(--enfi-success-color-10);
+
+  /* primary extend */
+  --enfi-primary-color-hover: var(--enfi-primary-color-7);
+  --enfi-primary-color-active: var(--enfi-primary-color-9);
+  --enfi-primary-color-disabled: var(--enfi-primary-color-3);
+  --enfi-primary-color-light: rgba(245, 250, 255, 100%);
+  --enfi-primary-color-focus: rgba(228, 235, 241, 100%);
+
+  /* warning extend */
+  --enfi-warning-color-hover: var(--enfi-warning-color-4);
+  --enfi-warning-color-active: var(--enfi-warning-color-6);
+  --enfi-warning-color-disabled: var(--enfi-warning-color-3);
+
+  /* error extend */
+  --enfi-error-color-hover: var(--enfi-error-color-5);
+  --enfi-error-color-active: var(--enfi-error-color-7);
+  --enfi-error-color-disabled: var(--enfi-error-color-3);
+
+  /* success extend */
+  --enfi-success-color-hover: var(--enfi-success-color-4);
+  --enfi-success-color-active: var(--enfi-success-color-6);
+  --enfi-success-color-disabled: var(--enfi-success-color-3);
+
+  /* background */
+  /* --enfi-bg-color-page: var(--enfi-gray-color-2);
+  --enfi-bg-color-container: #fff;
+  --enfi-bg-color-container-hover: var(--enfi-gray-color-1);
+  --enfi-bg-color-container-active: var(--enfi-gray-color-3); */
+
+  /* text */
+  --enfi-text-color-primary: var(--enfi-font-gray-4);
+  --enfi-text-color-second: var(--enfi-font-gray-3);
+  --enfi-text-color-placeholder: var(--td-font-gray-2);
+  --enfi-text-color-disabled: var(--enfi-font-gray-1);
+  --enfi-text-color-anti: var(--enfi-font-white-1);
+}
