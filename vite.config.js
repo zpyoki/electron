@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
@@ -23,6 +23,13 @@ export default defineConfig({
     }
   },
   server: {
-    port: 8888
+    port: 8888,
+    proxy: {
+      '/api': {
+        target: loadEnv(process.env.MODE, process.cwd()).VITE_API_URL,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })

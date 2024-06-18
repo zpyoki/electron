@@ -38,6 +38,7 @@
     "@grapecity-software/spread-sheets-tablesheet": "17.0.2",
     "@grapecity-software/spread-sheets-vue": "17.0.2",
     "ant-design-vue": "4.x",
+    "axios": "^1.7.2",
     "electron-log": "^5.1.2",
     "electron-updater": "^6.1.8",
     "exceljs": "^4.4.0",

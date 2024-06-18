@@ -17,7 +17,15 @@ const routes = [
         name: 'emolument',
         component: () => import('@/views/emolument/index.vue'),
         meta: {
-          title: '表格'
+          title: ''
+        }
+      },
+      {
+        path: 'employee',
+        name: 'employee',
+        component: () => import('@/views/employee/index.vue'),
+        meta: {
+          title: ''
         }
       }
     ]
