@@ -4,10 +4,11 @@ import { useGet } from '@/hooks/http/useHttp'
 
 let spread = null
 const dataSource = ref([])
-const [employeeRes, getEmployeeList] = useGet('/employee?pageNum=1&pageSize=10')
+const [employeeRes, getEmployeeList] = useGet()
 
 onMounted(async () => {
-  await getEmployeeList()
+  // await getEmployeeList('/employee?pageNum=1&pageSize=10')
+  await getEmployeeList('/employee')
   const { resp } = employeeRes
   if (resp.value.code === 0) {
     dataSource.value = resp.value.data
@@ -16,32 +17,32 @@ onMounted(async () => {
     // activeSheet.autoGenerateColumns = true
     activeSheet.setDataSource(dataSource.value)
     var colInfos = [
-                {
-                    name: 'code',
-                    displayName: '年度111',
-                    size: 100
-                },
-                {
-                    name: 'dept',
-                    displayName: '中铁大桥局',
-                    size: 100
-                },
-                {
-                    name: 'ic',
-                    displayName: '中铁4局',
-                    size: 100
-                },
-                {
-                    name: 'jtime',
-                    displayName: '备注',
-                    size: 100
-                },
-                {
-                    name: 'name',
-                    displayName: '数量',
-                    size: 100
-                }
-            ]
+      {
+        name: 'code',
+        displayName: '年度111',
+        size: 100
+      },
+      {
+        name: 'dept',
+        displayName: '中铁大桥局',
+        size: 100
+      },
+      {
+        name: 'ic',
+        displayName: '中铁4局',
+        size: 100
+      },
+      {
+        name: 'jtime',
+        displayName: '备注',
+        size: 100
+      },
+      {
+        name: 'name',
+        displayName: '数量',
+        size: 100
+      }
+    ]
     activeSheet.bindColumns(colInfos)
     activeSheet.addColumns(colInfos.length, 300)
     activeSheet.addRows(dataSource.value.length, 50)
@@ -71,7 +72,6 @@ onMounted(async () => {
   } else {
     console.log(resp.value.msg)
   }
-  console.log(dataSource.value)
 })
 
 function initialized (value) {

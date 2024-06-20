@@ -1,8 +1,20 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { useGet } from '@/hooks/http/useHttp'
 
 const saerchValue = ref('')
 const searchType = ref('name')
+const [emolumentRes, getEmolumentList] = useGet()
+
+onMounted(async () => {
+  await getEmolumentList('/emolument?pageNum=1&pageSize=10')
+  const { resp } = emolumentRes
+  if (resp.value.code === 0) {
+    console.log(resp.value.data)
+  } else {
+    console.log(resp.value.msg)
+  }
+})
 
 
 const data = [
@@ -65,5 +77,6 @@ const data = [
 .basic-page {
   background: #fff;
   padding: 16px;
+  border-radius: var(--px-gap-1);
 }
 </style>

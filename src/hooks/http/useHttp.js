@@ -42,12 +42,12 @@ http.interceptors.request.use((config) => {
 //   return Promise.reject(error)
 // })
 
-export function useGet(url) {
+export function useGet() {
   const resp = ref(null)
   const error = ref(null)
   const loading = ref(false)
  
-  const fetchData = async () => {
+  const fetchData = async (url) => {
     try {
       loading.value = true
       const response = await http.get(url)
