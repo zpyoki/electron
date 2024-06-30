@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 
+function toogleLock() {
+  window.electron.ipcRenderer.send('toggleLock')
+}
+
 function reloadPage() {
   window.location.reload()
 }
@@ -16,6 +20,7 @@ function toogleConsole() {
     <!-- <div style='height: inherit;'>LOGO</div> -->
     <div></div>
     <div class='dragless'>
+      <a-button @click="toogleLock">锁定</a-button>
       <a-button @click="reloadPage">刷新</a-button>
       <a-button @click="toogleConsole">控制台</a-button>
     </div>
