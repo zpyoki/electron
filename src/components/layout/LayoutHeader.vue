@@ -1,8 +1,11 @@
 <script setup>
 import { ref } from 'vue'
+import { useBaseStore } from '@/store/base'
+
+const baseStore = useBaseStore()
 
 function toogleLock() {
-  window.electron.ipcRenderer.send('toggleLock')
+  baseStore.toogleLock()
 }
 
 function reloadPage() {

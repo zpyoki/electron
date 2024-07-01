@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 import 'ant-design-vue/dist/reset.css'
 import './assets/css/main.css'
@@ -7,6 +8,11 @@ import { GcSpreadSheets, GcWorksheet } from '@grapecity-software/spread-sheets-v
 import Designer from "@grapecity-software/spread-sheets-designer-vue"
 
 let app = createApp(App)
+
+const pinia = createPinia()
+
+app.use(router)
+app.use(pinia)
 
 let electron = null
 if (window.require) {
@@ -37,7 +43,5 @@ app.config.errorHandler = (err) => {
     }
   }
 }
-
-app.use(router)
 
 app.mount('#app')
