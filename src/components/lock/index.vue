@@ -1,20 +1,51 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
-import { useBaseStore } from '@/store/base'
+import { message } from 'ant-design-vue'
 
-const baseStore = useBaseStore()
+const emit = defineEmits(['close', 'cancel'])
 const inputRef = ref(null)
 const pwd = ref('')
+const cancelFlag = ref(true)
+const cancelTip = ref('按`  ESC  `键退出')
 
 function handleKeyPress(event) {
   if (event.key === 'Enter') {
-    console.log(pwd.value)
-    baseStore.toogleLock()
+    emit('close', { pwd: pwd.value, resp: res => {
+      switch (res) {
+        case '设置锁屏密码成功':
+          message.success('设置锁屏密码成功')
+          cancelFlag.value = false
+          cancelTip.value = ''
+          break
+        case '密码正确':
+          message.success('密码正确')
+          cancelFlag.value = true
+          cancelTip.value = '按`  ESC  `键退出'
+          break
+        case '密码错误':
+          message.error('密码错误')
+          cancelFlag.value = false
+          cancelFlag.value = ''
+          break
+        default:
+          break
+      }
+    }})
+    pwd.value = ''
+  }
+}
+
+function handleKeydown(event) {
+  if (cancelFlag.value && event.key === 'Escape') {
+    emit('cancel')
+  } else if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+    emit('cancel')
   }
 }
 
 onMounted(() => {
   window.addEventListener('keypress', handleKeyPress)
+  window.addEventListener('keydown', handleKeydown)
   const currentFocusedElement = document.activeElement
   if (currentFocusedElement) currentFocusedElement.blur()
   inputRef.value.focus()
@@ -22,15 +53,18 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('keypress', handleKeyPress)
+  window.removeEventListener('keydown', handleKeydown)
 })
 </script>
 
 
 <template>
   <div class='lock-container'>
-    11233
     <div class='operate-container'>
-      <a-input ref='inputRef' v-model:value='pwd' type='password' autofocus placeholder='输入密码' />
+      <a-input-password ref='inputRef' v-model:value='pwd' placeholder='输入锁屏密码' />
+      <div>
+        <a-button type="link" v-if="cancelFlag" @click="emit('cancel')" style="margin: 20px;">{{ cancelTip }}</a-button>
+      </div>
     </div>
   </div>
 </template>
@@ -42,14 +76,14 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: pink;
-  /* z-index: 998; */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2F368F), color-stop(1, #77D1F6));
+  z-index: 998;
 }
 .operate-container {
   position: absolute;
   top: 80%;
   left: 50%;
-  background: pink;;
+  /* background: pink; */
   transform: translate(-50%, -50%);
 }
 </style>

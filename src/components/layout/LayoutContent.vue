@@ -11,16 +11,4 @@
 </template>
 
 <style scoped>
-/* transition: page */
-.page-enter-active {
-  transition: all 0.5s;
-}
-.page-leave-active {
-  transition: all 0.25s;
-  /* transition: all 0.25s ease-out; */
-}
-.page-enter-from, .page-leave-to {
-  transform: translateX(20px);
-  opacity: 0.1;
-}
 </style>

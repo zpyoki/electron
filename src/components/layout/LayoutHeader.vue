@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from 'vue'
-import { useBaseStore } from '@/store/base'
+import { useLockStore } from '@/store/lock'
 
-const baseStore = useBaseStore()
+const lockStore = useLockStore()
 
 function toogleLock() {
-  baseStore.toogleLock()
+  lockStore.confirmLock()
 }
 
 function reloadPage() {

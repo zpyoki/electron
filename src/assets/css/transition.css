@@ -1,0 +1,25 @@
+/* transition: page */
+.page-enter-active {
+  transition: all 0.5s;
+}
+.page-leave-active {
+  transition: all 0.25s;
+  /* transition: all 0.25s ease-out; */
+}
+.page-enter-from, .page-leave-to {
+  transform: translateX(20px);
+  opacity: 0.1;
+}
+
+/* transition: lock */
+.lock-enter-active {
+  transition: all 0.5s;
+}
+.lock-leave-active {
+  transition: all 0.5s;
+}
+.lock-enter-from, .lock-leave-to {
+  /* transform: translateY(-100vh); */
+  transform: scale(1, 2);
+  opacity: 0;
+}

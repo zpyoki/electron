@@ -3,9 +3,9 @@ import LayoutHeader from './LayoutHeader.vue'
 import LayoutSider from './LayoutSider.vue'
 import LayoutContent from './LayoutContent.vue'
 import Lock from '@/components/lock/index.vue'
-import { useBaseStore } from '@/store/base'
+import { useLockStore } from '@/store/lock'
 
-const baseStore = useBaseStore()
+const lockStore = useLockStore()
 </script>
 
 <template>
@@ -16,8 +16,8 @@ const baseStore = useBaseStore()
       <LayoutContent />
     </a-layout>
   </a-layout>
-  <Transition name="page" mode="out-in">
-    <Lock v-if='baseStore.locked' />
+  <Transition name="lock" mode="out-in">
+    <Lock v-if='lockStore.locked' @close="lockStore.confirmLock" @cancel="lockStore.cancelLock" />
   </Transition>
 </template>
 
@@ -25,17 +25,5 @@ const baseStore = useBaseStore()
 .layout {
   /* height: 100vh; */
   overflow: auto;
-}
-/* transition: page */
-.page-enter-active {
-  transition: all 0.5s;
-}
-.page-leave-active {
-  transition: all 0.25s;
-  /* transition: all 0.25s ease-out; */
-}
-.page-enter-from, .page-leave-to {
-  transform: translateX(20px);
-  opacity: 0.1;
 }
 </style>
