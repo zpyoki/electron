@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { message } from 'ant-design-vue'
+import { useKeyboard } from '@/hooks/event/useKeyboard'
 
 const emit = defineEmits(['close', 'cancel'])
 const inputRef = ref(null)
@@ -8,7 +9,7 @@ const pwd = ref('')
 const cancelFlag = ref(true)
 const cancelTip = ref('按`  ESC  `键退出')
 
-function handleKeyPress(event) {
+useKeyboard('keypress', (event) => {
   if (event.key === 'Enter') {
     emit('close', { pwd: pwd.value, resp: res => {
       switch (res) {
@@ -33,27 +34,20 @@ function handleKeyPress(event) {
     }})
     pwd.value = ''
   }
-}
+})
 
-function handleKeydown(event) {
+useKeyboard('keydown', (event) => {
   if (cancelFlag.value && event.key === 'Escape') {
     emit('cancel')
   } else if (event.ctrlKey && event.shiftKey && event.key === 'C') {
     emit('cancel')
   }
-}
+})
 
 onMounted(() => {
-  window.addEventListener('keypress', handleKeyPress)
-  window.addEventListener('keydown', handleKeydown)
   const currentFocusedElement = document.activeElement
   if (currentFocusedElement) currentFocusedElement.blur()
   inputRef.value.focus()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('keypress', handleKeyPress)
-  window.removeEventListener('keydown', handleKeydown)
 })
 </script>
 
